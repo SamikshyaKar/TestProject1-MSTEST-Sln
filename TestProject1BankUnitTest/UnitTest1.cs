@@ -51,5 +51,32 @@ namespace TestProject1BankUnitTest
 
 
         }
+
+        [Test]
+        [Category("Pass")]
+        [TestCase(200,0,100)]
+        [TestCase(500,0,200)]
+        [TestCase(800,0,600)]
+        [TestCase(900,0,400)]
+
+        public void TransferMinFunds(int a, int b, int c)
+        {
+            //arrange
+            Bank banksource = new Bank();
+            banksource.Deposit(a);
+            Bank bankdestination = new Bank();
+            bankdestination.Deposit(b);
+            //act
+            bankdestination= banksource.TransferMinFunds(bankdestination, c, banksource);
+
+            // assert
+
+            Assert.AreEqual(c, bankdestination.balance);
+
+            
+
+
+
+        }
     }
 }
