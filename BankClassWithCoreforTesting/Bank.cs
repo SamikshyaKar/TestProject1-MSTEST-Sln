@@ -8,8 +8,8 @@ namespace BankClassWithCoreforTesting
 {
     public class Bank
     {
-        private float balance;
-        private float minbalance = 10;
+        public float balance;
+        public float minbalance = 10;
 
 
         //public float Balance { get; set; }
